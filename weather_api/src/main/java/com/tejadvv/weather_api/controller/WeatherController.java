@@ -37,7 +37,15 @@ public class WeatherController {
         }
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> updateWeatherRecordById(@RequestBody Weather weather,@PathVariable int id){
+        if(weatherService.findWeatherRecordById(id).isPresent()){
+            weatherService.updateWeatherRecordById(weather);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteWeatherRecordById(@PathVariable int id){

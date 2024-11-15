@@ -28,4 +28,8 @@ public class WeatherService {
     public void deleteWeatherRecordById(int id) {
         weatherRepository.deleteById(id);
     }
+
+    public void updateWeatherRecordById(Weather weather) {
+        weatherRepository.save(weather);
+    }
 }

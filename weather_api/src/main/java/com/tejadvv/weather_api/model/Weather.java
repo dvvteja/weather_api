@@ -1,22 +1,26 @@
 package com.tejadvv.weather_api.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
+@Table
 public class Weather {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Integer id;
+    @Column
     private Date date;
+    @Column
     private Double lat;
+    @Column
     private Double lon;
+    @Column
     private String city;
+    @Column
     private String state;
+    @Column
     private Double temp;
 
     public Integer getId() {
