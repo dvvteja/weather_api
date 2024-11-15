@@ -37,6 +37,8 @@ public class WeatherController {
         }
     }
 
+    @PutMapping("/{id}")
+
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteWeatherRecordById(@PathVariable int id){
         if(weatherService.findWeatherRecordById(id).isPresent()){
